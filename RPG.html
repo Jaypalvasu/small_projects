@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+  
+  <title>OTP</title>
+  
+
+    <!-- Optional JavaScript -->
+    <!-- Popper.js first, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+
+   </head>
+<style>
+
+  .box{
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    padding: 15px;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  span{
+    color:red;
+  }
+  button{
+    margin-left: 600px;
+  }
+  .box{
+    margin-top: 300px;
+    margin-left: 400px;
+    margin-right: 400px;
+  }
+</style>
+<body>
+
+  <div class="box">
+    Dear Customer ,Your OTP for registration is <span id="otp"></span>
+  </div>
+<br>
+<button type="button" onclick="generate()" class="btn btn-outline-danger"> Generate OTP</button>
+
+<script>
+  function generate(){
+    var num="1234567890";
+    var otplenght=6;
+    var OTP="";
+
+    for(var i=0; i<otplenght;i++){
+
+      OTP+=num[Math.floor(Math.random()*num.length)];
+
+      //simplification
+      // OTP= OTP+num[Math.floor(Math.random()*num.length)];
+
+    }
+    document.getElementById("otp").innerHTML=OTP;
+  }
+
+  // var interval = setInterval(generate,1000);  this is for automatically generate OTP per 1 sec
+</script>
+
+</body>
+</html>
